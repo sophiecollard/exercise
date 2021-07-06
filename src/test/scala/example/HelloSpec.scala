@@ -12,4 +12,14 @@ class HelloSpec extends FlatSpec with Matchers {
     val order = Pizzeria.placeOrder(3)
     order.value shouldBe 30
   }
+
+  "When I order 3 pizzas with 4 standard toppings and the standard toppings are 50p" should "give and order value of £32" in {
+    val order = Pizzeria.placeOrder(3, 4)
+    order.value shouldBe 32
+  }
+
+  "When I order 4 pizzas with 2 standard and 5 premium toppings" should "give and order value of £46" in {
+    val order = Pizzeria.placeOrder(4, 2, 5)
+    order.value shouldBe 46
+  }
 }
